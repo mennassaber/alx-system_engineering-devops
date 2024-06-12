@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# This script demonstrates handling different signals
+
+pid_file="/var/run/myscript.pid"
+
+# Cleanup function to remove pid file and exit
+cleanup() {
+    rm -f "$pid_file"
+    exit
+}
+
+# Trap signals and perform actions
+trap 'echo "I hate the kill command"; exit' SIGTERM
+trap 'echo "Y U no love me?!"; exit' SIGINT
+trap cleanup SIGQUIT SIGTERM
+
+# Write PID to file
+echo $$ > "$pid_file"
+
+# Display message indefinitely
+while true; do
+    echo "To infinity and beyond"
+    sleep 2
+done

@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# This script stops the process created in Task 4 without using kill or killall
+
+pid=$(pgrep -f "4-to_infinity_and_beyond")
+if [ -n "$pid" ]; then
+    echo "Stopping process..."
+    kill $pid
+else
+    echo "Process not found"
+fi

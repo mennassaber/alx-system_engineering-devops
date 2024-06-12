@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+script_path="/path/to/manage_my_process"
+
+case "$1" in
+    start)
+        "$script_path" start
+        ;;
+    stop)
+        "$script_path" stop
+        ;;
+    restart)
+        "$script_path" restart
+        ;;
+    *)
+        echo "Usage: $0 {start|stop|restart}"
+        exit 1
+        ;;
+esac
