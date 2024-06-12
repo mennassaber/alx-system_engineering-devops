@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+# Read /etc/passwd using while loop and IFS to display specific user information
+while IFS=":" read -r username _ userid _ home _; do
+    echo "$username:$userid:$home"
+done < /etc/passwd
