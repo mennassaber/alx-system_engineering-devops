@@ -1,8 +1,2 @@
-#!/usr/bin/env bash
-# This script provides answers to questions about MAC and IP addresses.
-
-# Question 1
-echo "The unique identifier of a network interface"
-
-# Question 2
-echo "Is a number that network devices use to connect to networks"
+2
+1
